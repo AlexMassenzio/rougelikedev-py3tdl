@@ -1,13 +1,15 @@
 import tdl
 
+from entity import Entity
 from input_handlers import handle_keys
 
 def main():
 	screen_width = 80
 	screen_height = 50
 
-	player_x = int(screen_width / 2)
-	player_y = int(screen_height / 2)
+	player = Entity(int(screen_width / 2), int(screen_height / 2), '@', (255, 255, 255))
+	npc = Entity(int(screen_width / 2 - 5), int(screen_height / 2), '@', (255, 255, 0))
+	entities = [npc, player]
 
 	tdl.set_font('arial10x10.png', greyscale=True, altLayout=True)
 
