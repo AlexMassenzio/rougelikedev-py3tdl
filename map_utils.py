@@ -9,7 +9,7 @@ class Rect:
 		self.y2 = y + h
 
 	def center(self):
-		center_x = int((self.x1 + self.x1) / 2)
+		center_x = int((self.x1 + self.x2) / 2)
 		center_y = int((self.y1 + self.y2) / 2)
 		return (center_x, center_y)
 
@@ -82,7 +82,7 @@ def make_map(game_map, max_rooms, room_min_size, room_max_size, map_width, map_h
 					create_v_tunnel(game_map, prev_y, new_y, new_x)
 				else:
 					# Fist move vertically, then horizontally
-					create_v_tunnel(game_map, prev_y, new_y, new_x)
+					create_v_tunnel(game_map, prev_y, new_y, prev_x)
 					create_h_tunnel(game_map, prev_x, new_x, new_y)
 
 			# Finally, append the new room to the list
